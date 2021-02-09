@@ -1,0 +1,21 @@
+type Query {
+    shows(titleFilter: String): [Show]
+}
+
+type Show {
+    title: String
+    releaseYear: Int
+}
+
+type Mutation {
+    addRating(input: RatingInput):Rating
+}
+
+input RatingInput {
+    title: String,
+    stars: Int
+}
+
+type Rating {
+    avgStars: Float
+}
